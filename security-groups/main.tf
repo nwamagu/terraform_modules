@@ -60,7 +60,7 @@ resource "aws_security_group" "bastion_security_group" {
 
 # create security group for the app server
 resource "aws_security_group" "app_server_security_group" {
-  name        = "${car.project_name}-${var.environment}-app-server-sg"
+  name        = "${var.project_name}-${var.environment}-app-server-sg"
   description = "enable http/https access on port 80/443 via alb sg"
   vpc_id      = var.vpc_id
 
